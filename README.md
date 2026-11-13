@@ -1,23 +1,23 @@
 # worldclockgadget-site
 
-Landing page, privacy policy and theme guide for World Clock Gadget, a desktop world-clock app for Windows sold on the Microsoft Store.
-Static site served by GitHub Pages (no build step).
+World Clock Gadget의 랜딩 페이지, 개인정보 처리방침, 테마 가이드. World Clock Gadget은 Microsoft Store에서 파는 Windows용 바탕 화면 세계 시계 앱이다.
+GitHub Pages로 서비스하는 정적 사이트다(빌드 단계 없음).
 
-- URL: https://worldclock.coldlapse.dev
-- Privacy policy: https://worldclock.coldlapse.dev/privacy.html (the URL submitted to the Microsoft Store)
-- Theme guide: https://worldclock.coldlapse.dev/themes.html
-- Support: issues in this repository
+- 주소: https://worldclock.coldlapse.dev
+- 개인정보 처리방침: https://worldclock.coldlapse.dev/privacy.html (Microsoft Store에 제출하는 URL)
+- 테마 가이드: https://worldclock.coldlapse.dev/themes.html
+- 지원: 이 저장소의 issues
 
-English / Korean. The page follows the browser language on first visit (Korean browsers get Korean, everyone else English);
-the KO/EN toggle overrides it and is remembered. `?lang=en` or `?lang=ko` forces a language.
+영어와 한국어. 처음 방문하면 브라우저 언어를 따른다(한국어 브라우저는 한국어, 나머지는 영어).
+KO/EN 토글로 바꾸면 그 선택을 기억한다. `?lang=en`, `?lang=ko`로 언어를 강제할 수 있다.
 
-| File | Contents |
+| 파일 | 내용 |
 |---|---|
-| `index.html` | Landing page. Each sentence is written twice as `<span lang="en">` / `<span lang="ko">` and CSS shows one |
-| `privacy.html` | Privacy policy, both languages |
-| `themes.html` | Theme authoring guide, both languages |
-| `style.css` | Styles, light and dark (follows the OS setting) |
-| `main.js` | Language toggle |
-| `assets/` | Screenshots (rendered by the app from demo data) and the icon |
+| `index.html` | 랜딩 페이지. 문장마다 `<span lang="en">`과 `<span lang="ko">`로 두 번 쓰고 CSS가 하나만 보여 준다 |
+| `privacy.html` | 개인정보 처리방침, 두 언어 |
+| `themes.html` | 테마 제작 가이드, 두 언어 |
+| `style.css` | 스타일, 라이트와 다크(OS 설정을 따름) |
+| `main.js` | 언어 토글 |
+| `assets/` | 스크린샷(앱이 데모 데이터로 렌더링)과 아이콘 |
 
-The Pretendard font is loaded from jsDelivr.
+Pretendard 글꼴은 jsDelivr에서 불러온다.
