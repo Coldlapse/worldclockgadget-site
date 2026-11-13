@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theme guide · World Clock Gadget</title>
+  <meta name="title-ko" content="테마 제작 가이드 · World Clock Gadget" />
+  <meta name="title-en" content="Theme guide · World Clock Gadget" />
+  <meta name="description" content="How to make World Clock Gadget themes: theme.json reference, colours, gradients, fonts, images and image hands." />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var l = null; try { l = localStorage.getItem('lang'); } catch (e) {}
+      var q = new URLSearchParams(location.search).get('lang');
+      l = q === 'ko' || q === 'en' ? q : l || ((navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+      document.documentElement.dataset.lang = l; document.documentElement.lang = l;
+    })();
+  </script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="favicon-32.png" alt="" width="26" height="26" />World Clock Gadget</a>
+      <nav class="nav">
+        <a href="./"><span lang="en">Home</span><span lang="ko">홈</span></a>
+        <a href="privacy.html"><span lang="en">Privacy</span><span lang="ko">개인정보</span></a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-set-lang="ko">KO</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="doc">
+    <div class="wrap">
+
+<!-- ======================================================= English ======================================================= -->
+<div lang="en">
+  <h1>Theme guide</h1>
+  <p class="meta">Theme format version 1</p>
+  <p>A theme is a folder with a <code>theme.json</code> file and, optionally, images and fonts. It controls everything a clock draws: the card behind it, the digital and analog faces, the hands, ticks and numbers, and the region-name and UTC-offset labels.</p>
+
+  <div class="toc"><strong>Contents</strong>
+    <ol>
+      <li><a href="#en-start">Quick start</a></li>
+      <li><a href="#en-rules">File rules</a></li>
+      <li><a href="#en-values">Values: colours, gradients, fonts, sizes</a></li>
+      <li><a href="#en-gadget"><code>gadget</code>: the card</a></li>
+      <li><a href="#en-digital"><code>digital</code></a></li>
+      <li><a href="#en-analog"><code>analog</code></a> and image hands</li>
+      <li><a href="#en-labels"><code>labels</code></a></li>
+      <li><a href="#en-share">Sharing a theme</a></li>
+      <li><a href="#en-trouble">Troubleshooting</a></li>
+    </ol>
+  </div>
+
+  <h2 id="en-start">Quick start</h2>
+  <ol>
+    <li>Open <strong>Settings → Themes → New theme from template</strong>. This creates <code>Documents\World Clock Gadget\Themes\my-theme\</code> and selects its <code>theme.json</code> in Explorer.</li>
+    <li>Open <code>theme.json</code> in any text editor (Notepad, VS Code).</li>
+    <li>Right-click a clock → <strong>Theme</strong> → <strong>My Theme (Custom)</strong>.</li>
+    <li>Edit and save. The clock redraws as soon as the file is saved. Errors appear under the theme's card in <strong>Settings → Themes</strong>.</li>
+  </ol>
+  <p>The template lists every setting with its default value and a comment. Delete what you don't need: anything missing keeps its default. The smallest useful theme is a few lines:</p>
+<pre><code>{
+  "name": "Orange",
+  "digital": { "font": { "color": "#FF8800" } },
+  "labels":  { "name": { "color": "#FF8800" } }
+}</code></pre>
+
+  <h2 id="en-rules">File rules</h2>
+  <ul>
+    <li>File name <code>theme.json</code>, UTF-8. Comments (<code>//</code>, <code>/* */</code>) and trailing commas are allowed. Key names are case-insensitive.</li>
+    <li>The folder name is the theme's id. Rename the folder and clocks using it fall back to the default theme.</li>
+    <li>Folders whose names start with <code>_</code> or <code>.</code> are ignored (handy for drafts).</li>
+    <li>Images and fonts are looked up relative to the theme folder. Paths that leave the folder (<code>../</code>) are ignored.</li>
+    <li>Unknown keys are ignored, so a theme written for a newer version still loads.</li>
+  </ul>
+
+  <h2 id="en-values">Values</h2>
+  <table>
+    <tr><th>Kind</th><th>How to write it</th></tr>
+    <tr><td>Colour</td><td><code>"#RRGGBB"</code>, <code>"#AARRGGBB"</code> (AA is opacity: <code>00</code> transparent to <code>FF</code> solid), a colour name (<code>"white"</code>), <code>"transparent"</code>, or <code>null</code> to draw nothing</td></tr>
+    <tr><td>Gradient</td><td><code>{ "type": "linear", "angle": 90, "stops": [ { "color": "#FF0000", "offset": 0 }, { "color": "#0000FF", "offset": 1 } ] }</code>. Angle 0 runs left to right, 90 top to bottom. <code>"type": "radial"</code> spreads from the centre</td></tr>
+    <tr><td>Font</td><td><code>{ "family": "Segoe UI", "size": 14, "weight": "SemiBold", "style": "Normal", "color": "#FFFFFF" }</code>. List fallbacks with commas: <code>"Cascadia Mono, Consolas"</code></td></tr>
+    <tr><td>Weight</td><td><code>Thin</code>, <code>ExtraLight</code>, <code>Light</code>, <code>Normal</code>, <code>Medium</code>, <code>SemiBold</code>, <code>Bold</code>, <code>ExtraBold</code>, <code>Black</code>, or a number 1–999</td></tr>
+    <tr><td>Size</td><td>Pixels at 100% clock size. The clock's <strong>Size</strong> option scales everything together</td></tr>
+    <tr><td>Fraction</td><td>Analog lengths and radii are fractions of the dial radius: <code>0.5</code> reaches halfway to the rim</td></tr>
+  </table>
+  <h3>Bundling a font</h3>
+  <p>Put the <code>.ttf</code> or <code>.otf</code> next to <code>theme.json</code>, set <code>file</code> to its name and <code>family</code> to the font's <em>family name</em> (the name Windows shows when you open the font file), not the file name. Check the font's licence before sharing a theme that bundles it.</p>
+<pre><code>"font": { "file": "Orbitron-Bold.ttf", "family": "Orbitron", "size": 36 }</code></pre>
+
+  <h2 id="en-gadget"><code>gadget</code>: the card</h2>
+  <table>
+    <tr><th>Key</th><th>Default</th><th>Notes</th></tr>
+    <tr><td><code>background</code></td><td><code>"#D9161A20"</code></td><td>Colour or gradient. <code>null</code> for no card</td></tr>
+    <tr><td><code>backgroundImage</code></td><td><code>null</code></td><td>Image file, drawn over the background colour and clipped to the rounded card</td></tr>
+    <tr><td><code>backgroundImageStretch</code></td><td><code>"uniformToFill"</code></td><td><code>fill</code>, <code>uniform</code>, <code>uniformToFill</code>, <code>none</code></td></tr>
+    <tr><td><code>cornerRadius</code></td><td><code>14</code></td><td></td></tr>
+    <tr><td><code>border</code>, <code>borderThickness</code></td><td><code>"#26FFFFFF"</code>, <code>1</code></td><td><code>null</code> for no border</td></tr>
+    <tr><td><code>padding</code></td><td><code>14</code></td><td>Space between the card edge and its content</td></tr>
+    <tr><td><code>spacing</code></td><td><code>8</code></td><td>Gap between the clock and its labels</td></tr>
+    <tr><td><code>shadow</code></td><td>on, black, 0.45, blur 14, depth 3</td><td><code>{ "show", "color", "opacity", "blur", "depth" }</code>. Also works without a card: it then shadows the text and hands</td></tr>
+  </table>
+
+  <h2 id="en-digital"><code>digital</code></h2>
+  <table>
+    <tr><th>Key</th><th>Default</th><th>Notes</th></tr>
+    <tr><td><code>font</code></td><td>Segoe UI Variable Display, 40, SemiBold, white</td><td>Hours and minutes</td></tr>
+    <tr><td><code>use24Hour</code>, <code>showSeconds</code></td><td><code>true</code>, <code>true</code></td><td>Defaults only; each clock can override them from its menu</td></tr>
+    <tr><td><code>secondsScale</code></td><td><code>0.55</code></td><td>Seconds size relative to the hours. <code>1</code> draws <code>12:34:56</code> all at one size</td></tr>
+    <tr><td><code>secondsColor</code></td><td><code>null</code></td><td><code>null</code> = same as the font colour</td></tr>
+    <tr><td><code>showAmPm</code>, <code>amPmScale</code></td><td><code>true</code>, <code>0.4</code></td><td>12-hour mode only. Uses the UI language's AM/PM words</td></tr>
+    <tr><td><code>blinkColon</code></td><td><code>false</code></td><td>Hides the separator on odd seconds</td></tr>
+    <tr><td><code>separator</code></td><td><code>":"</code></td><td></td></tr>
+    <tr><td><code>showDate</code>, <code>datePosition</code></td><td><code>true</code>, <code>"below"</code></td><td><code>above</code> or <code>below</code> the time</td></tr>
+    <tr><td><code>dateFormat</code></td><td><code>"auto"</code></td><td><code>auto</code> picks a format for the UI language. Otherwise a .NET date format such as <code>"yyyy-MM-dd"</code> or <code>"ddd d MMM"</code></td></tr>
+    <tr><td><code>dateFont</code>, <code>dateSpacing</code>, <code>uppercaseDate</code></td><td>13 px, <code>6</code>, <code>false</code></td><td></td></tr>
+  </table>
+  <p>Digits are laid out on a fixed grid, so the card does not change width as the seconds tick.</p>
+
+  <h2 id="en-analog"><code>analog</code></h2>
+  <table>
+    <tr><th>Key</th><th>Default</th><th>Notes</th></tr>
+    <tr><td><code>diameter</code></td><td><code>140</code></td><td></td></tr>
+    <tr><td><code>face</code>, <code>faceImage</code></td><td>dark grey, <code>null</code></td><td>The image is clipped to the circle; square images work best</td></tr>
+    <tr><td><code>faceBorder</code>, <code>faceBorderThickness</code></td><td><code>"#FF3A424D"</code>, <code>2</code></td><td></td></tr>
+    <tr><td><code>majorTicks</code></td><td>12 hour marks</td><td><code>{ "show", "color", "width", "length", "shape": "line" | "dot", "inset" }</code></td></tr>
+    <tr><td><code>minorTicks</code></td><td>48 minute marks</td><td>Same keys</td></tr>
+    <tr><td><code>numbers</code></td><td>hidden</td><td><code>{ "show", "style": "arabic" | "roman", "quartersOnly", "radius", "font" }</code></td></tr>
+    <tr><td><code>hourHand</code>, <code>minuteHand</code>, <code>secondHand</code></td><td></td><td><code>{ "show", "color", "width", "length", "tail", "cap": "round" | "flat" | "square" }</code></td></tr>
+    <tr><td><code>smoothSeconds</code></td><td><code>false</code></td><td>Sweeping second hand (redraws 20 times a second)</td></tr>
+    <tr><td><code>center</code></td><td>white, radius 4</td><td>The cap over the hands</td></tr>
+    <tr><td><code>showDate</code>, <code>dateFormat</code>, <code>dateFont</code></td><td><code>false</code>, <code>"d"</code></td><td>Small date inside the dial, below the centre</td></tr>
+  </table>
+  <h3>Image hands</h3>
+  <p>A hand can be a picture instead of a line. Draw it pointing straight up (12 o'clock) on a transparent background, then:</p>
+<pre><code>"minuteHand": { "image": "minute.png", "length": 0.8, "tail": 0.15, "pivotX": 0.5, "pivotY": 0.84 }</code></pre>
+  <p>The picture is scaled so its height equals <code>length + tail</code> times the dial radius. <code>pivotX</code> and <code>pivotY</code> mark the point it rotates around, as fractions of the image's width and height (here: centred horizontally, 84% of the way down).</p>
+
+  <h2 id="en-labels"><code>labels</code></h2>
+  <table>
+    <tr><th>Key</th><th>Default</th><th>Notes</th></tr>
+    <tr><td><code>name</code></td><td>14 px SemiBold, 90% white</td><td>The region name. Each clock sets the text and whether it sits on top, bottom, left, right or nowhere</td></tr>
+    <tr><td><code>offset</code></td><td>12 px, 60% white</td><td>The UTC offset</td></tr>
+    <tr><td><code>uppercaseName</code></td><td><code>false</code></td><td></td></tr>
+    <tr><td><code>offsetFormat</code></td><td><code>"UTC{sign}{h}{:mm}"</code></td><td><code>{sign}</code>, <code>{h}</code> hours, <code>{hh}</code> two-digit hours, <code>{mm}</code> minutes, <code>{:mm}</code> <code>":30"</code> only when minutes are not zero. Gives <code>UTC+9</code>, <code>UTC−3:30</code>, <code>UTC+5:45</code></td></tr>
+    <tr><td><code>minusSign</code></td><td><code>"−"</code></td><td>U+2212. Use <code>"-"</code> for a plain hyphen</td></tr>
+  </table>
+  <p>Daylight saving time is applied: New York shows <code>UTC−5</code> in winter and <code>UTC−4</code> in summer.</p>
+
+  <h2 id="en-share">Sharing a theme</h2>
+  <p>Zip the theme folder. The person you send it to unzips it into <code>Documents\World Clock Gadget\Themes\</code> (Settings → Themes → Open themes folder). Only include images and fonts you are allowed to share.</p>
+
+  <h2 id="en-trouble">Troubleshooting</h2>
+  <ul>
+    <li><strong>The clock uses the default look.</strong> The theme failed to load. The error, with line and column, is shown under the theme in Settings → Themes.</li>
+    <li><strong>A colour or image does not show.</strong> Settings → Themes lists warnings for colours that cannot be read and files that are missing.</li>
+    <li><strong>My font is ignored.</strong> <code>family</code> must be the font's family name, not the file name. Windows falls back to the next family in the list.</li>
+    <li><strong>Changes don't appear.</strong> Make sure you saved the file. If your editor saves somewhere unusual, press Reload in Settings → Themes.</li>
+  </ul>
+</div>
+
+<!-- ======================================================= 한국어 ======================================================= -->
+<div lang="ko">
+  <h1>테마 제작 가이드</h1>
+  <p class="meta">테마 형식 버전 1</p>
+  <p>테마는 <code>theme.json</code> 파일 하나와, 필요하면 이미지와 글꼴을 담은 폴더입니다. 시계가 그리는 모든 것을 테마가 정합니다. 뒤의 카드, 디지털·아날로그 문자판, 바늘과 눈금과 숫자, 지역명과 UTC 표기 라벨까지요.</p>
+
+  <div class="toc"><strong>목차</strong>
+    <ol>
+      <li><a href="#ko-start">빠르게 시작하기</a></li>
+      <li><a href="#ko-rules">파일 규칙</a></li>
+      <li><a href="#ko-values">값 쓰는 법: 색, 그라데이션, 글꼴, 크기</a></li>
+      <li><a href="#ko-gadget"><code>gadget</code>: 카드</a></li>
+      <li><a href="#ko-digital"><code>digital</code></a></li>
+      <li><a href="#ko-analog"><code>analog</code></a>와 이미지 바늘</li>
+      <li><a href="#ko-labels"><code>labels</code></a></li>
+      <li><a href="#ko-share">테마 공유하기</a></li>
+      <li><a href="#ko-trouble">문제 해결</a></li>
+    </ol>
+  </div>
+
+  <h2 id="ko-start">빠르게 시작하기</h2>
+  <ol>
+    <li><strong>설정 → 테마 → 템플릿으로 새 테마</strong>를 누릅니다. <code>문서\World Clock Gadget\Themes\my-theme\</code> 폴더가 생기고 탐색기에서 <code>theme.json</code>이 선택됩니다.</li>
+    <li><code>theme.json</code>을 아무 텍스트 편집기(메모장, VS Code)로 엽니다.</li>
+    <li>시계를 오른쪽 클릭 → <strong>테마</strong> → <strong>My Theme (사용자)</strong>를 고릅니다.</li>
+    <li>고치고 저장합니다. 저장하는 즉시 시계가 다시 그려집니다. 오류는 <strong>설정 → 테마</strong>의 해당 테마 아래에 나옵니다.</li>
+  </ol>
+  <p>템플릿에는 모든 설정이 기본값, 설명과 함께 들어 있습니다. 필요 없는 줄은 지워도 됩니다. 빠진 설정은 기본값을 씁니다. 그래서 몇 줄짜리 테마도 됩니다.</p>
+<pre><code>{
+  "name": "Orange",
+  "digital": { "font": { "color": "#FF8800" } },
+  "labels":  { "name": { "color": "#FF8800" } }
+}</code></pre>
+
+  <h2 id="ko-rules">파일 규칙</h2>
+  <ul>
+    <li>파일 이름은 <code>theme.json</code>, UTF-8입니다. 주석(<code>//</code>, <code>/* */</code>)과 끝 쉼표를 써도 됩니다. 키 이름은 대소문자를 가리지 않습니다.</li>
+    <li>폴더 이름이 테마 ID입니다. 폴더 이름을 바꾸면 그 테마를 쓰던 시계는 기본 테마로 돌아갑니다.</li>
+    <li>이름이 <code>_</code>나 <code>.</code>로 시작하는 폴더는 무시합니다(초안 보관용).</li>
+    <li>이미지와 글꼴은 테마 폴더 기준 상대 경로로 찾습니다. 폴더 밖을 가리키는 경로(<code>../</code>)는 무시합니다.</li>
+    <li>모르는 키는 무시하므로, 새 버전용으로 만든 테마도 불러올 수 있습니다.</li>
+  </ul>
+
+  <h2 id="ko-values">값 쓰는 법</h2>
+  <table>
+    <tr><th>종류</th><th>쓰는 법</th></tr>
+    <tr><td>색</td><td><code>"#RRGGBB"</code>, <code>"#AARRGGBB"</code>(AA는 불투명도, <code>00</code> 투명부터 <code>FF</code> 불투명까지), 색 이름(<code>"white"</code>), <code>"transparent"</code>, 아무것도 그리지 않으려면 <code>null</code></td></tr>
+    <tr><td>그라데이션</td><td><code>{ "type": "linear", "angle": 90, "stops": [ { "color": "#FF0000", "offset": 0 }, { "color": "#0000FF", "offset": 1 } ] }</code>. 각도 0은 왼쪽에서 오른쪽, 90은 위에서 아래. <code>"type": "radial"</code>은 가운데에서 퍼집니다</td></tr>
+    <tr><td>글꼴</td><td><code>{ "family": "Segoe UI", "size": 14, "weight": "SemiBold", "style": "Normal", "color": "#FFFFFF" }</code>. 대체 글꼴은 쉼표로 이어 씁니다: <code>"Cascadia Mono, Consolas"</code></td></tr>
+    <tr><td>굵기</td><td><code>Thin</code>, <code>ExtraLight</code>, <code>Light</code>, <code>Normal</code>, <code>Medium</code>, <code>SemiBold</code>, <code>Bold</code>, <code>ExtraBold</code>, <code>Black</code>, 또는 1~999 숫자</td></tr>
+    <tr><td>크기</td><td>시계 크기 100% 기준 픽셀. 시계의 <strong>크기</strong> 옵션이 전체를 함께 키우고 줄입니다</td></tr>
+    <tr><td>비율</td><td>아날로그의 길이와 반지름은 문자판 반지름에 대한 비율입니다. <code>0.5</code>면 테두리까지의 절반</td></tr>
+  </table>
+  <h3>글꼴 함께 넣기</h3>
+  <p><code>.ttf</code>나 <code>.otf</code>를 <code>theme.json</code> 옆에 두고, <code>file</code>에는 파일 이름을, <code>family</code>에는 글꼴의 <em>패밀리 이름</em>(글꼴 파일을 열면 Windows가 보여 주는 이름)을 씁니다. 파일 이름이 아닙니다. 글꼴을 넣은 테마를 공유하기 전에 글꼴 라이선스를 확인하세요.</p>
+<pre><code>"font": { "file": "Orbitron-Bold.ttf", "family": "Orbitron", "size": 36 }</code></pre>
+
+  <h2 id="ko-gadget"><code>gadget</code>: 카드</h2>
+  <table>
+    <tr><th>키</th><th>기본값</th><th>설명</th></tr>
+    <tr><td><code>background</code></td><td><code>"#D9161A20"</code></td><td>색 또는 그라데이션. 카드를 없애려면 <code>null</code></td></tr>
+    <tr><td><code>backgroundImage</code></td><td><code>null</code></td><td>이미지 파일. 배경색 위에 그리고 둥근 카드 모양으로 자릅니다</td></tr>
+    <tr><td><code>backgroundImageStretch</code></td><td><code>"uniformToFill"</code></td><td><code>fill</code>, <code>uniform</code>, <code>uniformToFill</code>, <code>none</code></td></tr>
+    <tr><td><code>cornerRadius</code></td><td><code>14</code></td><td></td></tr>
+    <tr><td><code>border</code>, <code>borderThickness</code></td><td><code>"#26FFFFFF"</code>, <code>1</code></td><td>테두리를 없애려면 <code>null</code></td></tr>
+    <tr><td><code>padding</code></td><td><code>14</code></td><td>카드 가장자리와 내용 사이 여백</td></tr>
+    <tr><td><code>spacing</code></td><td><code>8</code></td><td>시계와 라벨 사이 간격</td></tr>
+    <tr><td><code>shadow</code></td><td>켬, 검정, 0.45, 흐림 14, 거리 3</td><td><code>{ "show", "color", "opacity", "blur", "depth" }</code>. 카드가 없어도 동작하며, 이때는 글자와 바늘에 그림자가 생깁니다</td></tr>
+  </table>
+
+  <h2 id="ko-digital"><code>digital</code></h2>
+  <table>
+    <tr><th>키</th><th>기본값</th><th>설명</th></tr>
+    <tr><td><code>font</code></td><td>Segoe UI Variable Display, 40, SemiBold, 흰색</td><td>시와 분</td></tr>
+    <tr><td><code>use24Hour</code>, <code>showSeconds</code></td><td><code>true</code>, <code>true</code></td><td>기본값일 뿐이며 시계마다 메뉴에서 바꿀 수 있습니다</td></tr>
+    <tr><td><code>secondsScale</code></td><td><code>0.55</code></td><td>시 대비 초의 크기. <code>1</code>이면 <code>12:34:56</code>을 같은 크기로</td></tr>
+    <tr><td><code>secondsColor</code></td><td><code>null</code></td><td><code>null</code>이면 글꼴 색과 같음</td></tr>
+    <tr><td><code>showAmPm</code>, <code>amPmScale</code></td><td><code>true</code>, <code>0.4</code></td><td>12시간제에서만. UI 언어의 오전/오후 표기를 씁니다</td></tr>
+    <tr><td><code>blinkColon</code></td><td><code>false</code></td><td>홀수 초마다 구분자를 숨김</td></tr>
+    <tr><td><code>separator</code></td><td><code>":"</code></td><td></td></tr>
+    <tr><td><code>showDate</code>, <code>datePosition</code></td><td><code>true</code>, <code>"below"</code></td><td>시간 위(<code>above</code>) 또는 아래(<code>below</code>)</td></tr>
+    <tr><td><code>dateFormat</code></td><td><code>"auto"</code></td><td><code>auto</code>는 UI 언어에 맞는 형식을 고릅니다. 아니면 <code>"yyyy-MM-dd"</code>, <code>"M월 d일 (ddd)"</code> 같은 .NET 날짜 형식</td></tr>
+    <tr><td><code>dateFont</code>, <code>dateSpacing</code>, <code>uppercaseDate</code></td><td>13 px, <code>6</code>, <code>false</code></td><td></td></tr>
+  </table>
+  <p>숫자는 고정 폭으로 배치하므로 초가 바뀌어도 카드 폭이 흔들리지 않습니다.</p>
+
+  <h2 id="ko-analog"><code>analog</code></h2>
+  <table>
+    <tr><th>키</th><th>기본값</th><th>설명</th></tr>
+    <tr><td><code>diameter</code></td><td><code>140</code></td><td></td></tr>
+    <tr><td><code>face</code>, <code>faceImage</code></td><td>짙은 회색, <code>null</code></td><td>이미지는 원 모양으로 자릅니다. 정사각형 이미지가 잘 맞습니다</td></tr>
+    <tr><td><code>faceBorder</code>, <code>faceBorderThickness</code></td><td><code>"#FF3A424D"</code>, <code>2</code></td><td></td></tr>
+    <tr><td><code>majorTicks</code></td><td>시 눈금 12개</td><td><code>{ "show", "color", "width", "length", "shape": "line" | "dot", "inset" }</code></td></tr>
+    <tr><td><code>minorTicks</code></td><td>분 눈금 48개</td><td>키는 같습니다</td></tr>
+    <tr><td><code>numbers</code></td><td>숨김</td><td><code>{ "show", "style": "arabic" | "roman", "quartersOnly", "radius", "font" }</code></td></tr>
+    <tr><td><code>hourHand</code>, <code>minuteHand</code>, <code>secondHand</code></td><td></td><td><code>{ "show", "color", "width", "length", "tail", "cap": "round" | "flat" | "square" }</code></td></tr>
+    <tr><td><code>smoothSeconds</code></td><td><code>false</code></td><td>초침이 미끄러지듯 움직임(초당 20번 다시 그림)</td></tr>
+    <tr><td><code>center</code></td><td>흰색, 반지름 4</td><td>바늘 위 가운데 점</td></tr>
+    <tr><td><code>showDate</code>, <code>dateFormat</code>, <code>dateFont</code></td><td><code>false</code>, <code>"d"</code></td><td>문자판 안, 가운데 아래의 작은 날짜</td></tr>
+  </table>
+  <h3>이미지 바늘</h3>
+  <p>바늘을 선 대신 그림으로 그릴 수 있습니다. 투명 배경에 12시 방향(위쪽)을 가리키도록 그린 뒤 이렇게 씁니다.</p>
+<pre><code>"minuteHand": { "image": "minute.png", "length": 0.8, "tail": 0.15, "pivotX": 0.5, "pivotY": 0.84 }</code></pre>
+  <p>그림의 높이가 문자판 반지름 × (<code>length</code> + <code>tail</code>)이 되도록 늘리고 줄입니다. <code>pivotX</code>, <code>pivotY</code>는 회전 중심을 그림의 너비와 높이에 대한 비율로 나타냅니다(위 예는 가로 가운데, 위에서 84% 지점).</p>
+
+  <h2 id="ko-labels"><code>labels</code></h2>
+  <table>
+    <tr><th>키</th><th>기본값</th><th>설명</th></tr>
+    <tr><td><code>name</code></td><td>14 px SemiBold, 흰색 90%</td><td>지역명. 글자와 위치(위, 아래, 왼쪽, 오른쪽, 숨김)는 시계마다 정합니다</td></tr>
+    <tr><td><code>offset</code></td><td>12 px, 흰색 60%</td><td>UTC 표기</td></tr>
+    <tr><td><code>uppercaseName</code></td><td><code>false</code></td><td></td></tr>
+    <tr><td><code>offsetFormat</code></td><td><code>"UTC{sign}{h}{:mm}"</code></td><td><code>{sign}</code> 부호, <code>{h}</code> 시, <code>{hh}</code> 두 자리 시, <code>{mm}</code> 분, <code>{:mm}</code>은 분이 0이 아닐 때만 <code>":30"</code>. 결과는 <code>UTC+9</code>, <code>UTC−3:30</code>, <code>UTC+5:45</code></td></tr>
+    <tr><td><code>minusSign</code></td><td><code>"−"</code></td><td>U+2212. 일반 하이픈을 쓰려면 <code>"-"</code></td></tr>
+  </table>
+  <p>서머타임을 반영합니다. 뉴욕은 겨울에 <code>UTC−5</code>, 여름에 <code>UTC−4</code>로 나옵니다.</p>
+
+  <h2 id="ko-share">테마 공유하기</h2>
+  <p>테마 폴더를 zip으로 묶어 보내면, 받는 사람이 <code>문서\World Clock Gadget\Themes\</code>(설정 → 테마 → 테마 폴더 열기)에 풀면 됩니다. 공유해도 되는 이미지와 글꼴만 넣으세요.</p>
+
+  <h2 id="ko-trouble">문제 해결</h2>
+  <ul>
+    <li><strong>시계가 기본 모양으로 나와요.</strong> 테마를 불러오지 못한 것입니다. 설정 → 테마의 해당 테마 아래에 오류와 줄·열 번호가 나옵니다.</li>
+    <li><strong>색이나 이미지가 안 보여요.</strong> 읽을 수 없는 색과 없는 파일은 설정 → 테마에 경고로 나옵니다.</li>
+    <li><strong>글꼴이 적용되지 않아요.</strong> <code>family</code>는 파일 이름이 아니라 글꼴의 패밀리 이름이어야 합니다. 못 찾으면 목록의 다음 글꼴을 씁니다.</li>
+    <li><strong>바꾼 내용이 안 보여요.</strong> 파일을 저장했는지 확인하세요. 편집기가 특이한 방식으로 저장한다면 설정 → 테마에서 다시 불러오기를 누르세요.</li>
+  </ul>
+</div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Coldlapse</span>
+      <a href="./"><span lang="en">Home</span><span lang="ko">홈</span></a>
+      <a href="privacy.html"><span lang="en">Privacy</span><span lang="ko">개인정보 처리방침</span></a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>World Clock Gadget</title>
+  <meta name="title-ko" content="World Clock Gadget · 바탕 화면 세계 시계" />
+  <meta name="title-en" content="World Clock Gadget · World clocks on your Windows desktop" />
+  <meta name="description" content="Desktop world clocks for Windows. Any time zone, digital or analog, region name and UTC offset on any side, always on top, adjustable opacity, and fully themeable. Works offline." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="World Clock Gadget" />
+  <meta property="og:url" content="https://worldclock.coldlapse.dev/" />
+  <meta property="og:title" content="World Clock Gadget" />
+  <meta property="og:description" content="World clocks on your Windows desktop. Any time zone, digital or analog, fully themeable." />
+  <meta property="og:image" content="https://worldclock.coldlapse.dev/assets/shot-finance.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#2b6fc4" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var l = null; try { l = localStorage.getItem('lang'); } catch (e) {}
+      var q = new URLSearchParams(location.search).get('lang');
+      l = q === 'ko' || q === 'en' ? q : l || ((navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+      document.documentElement.dataset.lang = l; document.documentElement.lang = l;
+    })();
+  </script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-windows" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.6 10.4 4.5v7H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.4v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 3h6l-1 6 4 4H6l4-4zM12 13v8"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4l6 6-8 8H6v-6zM4 20h4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 19h16M7 15l4-4 3 3 5-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="favicon-32.png" alt="" width="26" height="26" />World Clock Gadget</a>
+      <nav class="nav">
+        <a href="#features"><span lang="en">Features</span><span lang="ko">기능</span></a>
+        <a href="themes.html"><span lang="en">Theme guide</span><span lang="ko">테마 가이드</span></a>
+        <a href="privacy.html"><span lang="en">Privacy</span><span lang="ko">개인정보</span></a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-set-lang="ko">KO</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <h1>
+          <span lang="en">Every time zone you need,<br />right on your desktop.</span>
+          <span lang="ko">필요한 시간대를<br />바탕 화면 위에 그대로.</span>
+        </h1>
+        <p class="lead">
+          <span lang="en">World Clock Gadget puts small, good-looking clocks on your Windows desktop. Pick any time zone, choose digital or analog, place the city name and UTC offset where you like, and style every pixel with themes.</span>
+          <span lang="ko">World Clock Gadget은 Windows 바탕 화면에 작고 깔끔한 시계를 띄웁니다. 시간대를 고르고, 디지털이나 아날로그를 고르고, 지역명과 UTC 표기를 원하는 쪽에 붙이고, 테마로 모양을 끝까지 바꿀 수 있습니다.</span>
+        </p>
+        <div class="cta">
+          <a class="btn primary disabled" aria-disabled="true">
+            <svg aria-hidden="true"><use href="#i-windows" /></svg>
+            <span lang="en">Coming soon to Microsoft Store</span><span lang="ko">Microsoft Store 출시 예정</span>
+          </a>
+          <a class="btn" href="themes.html"><span lang="en">Theme guide</span><span lang="ko">테마 가이드</span></a>
+        </div>
+        <p class="price">
+          <span lang="en">One-time purchase (US$0.99 in the US). Windows 10 (2004) or later, Windows 11.</span>
+          <span lang="ko">한 번 구매(미국 기준 0.99달러). Windows 10(2004) 이상, Windows 11.</span>
+        </p>
+        <img class="shot" src="assets/shot-finance.png" width="1920" height="1080"
+             alt="Four digital clocks in a row: US East, US West, Korea and UTC" />
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="wrap">
+        <h2><span lang="en">Small clocks, plenty of control</span><span lang="ko">작은 시계, 넉넉한 설정</span></h2>
+        <p class="sub">
+          <span lang="en">Each clock is its own little window. Drag it anywhere, right-click it for options, Ctrl + mouse wheel to resize.</span>
+          <span lang="ko">시계 하나가 작은 창 하나입니다. 끌어서 옮기고, 오른쪽 클릭으로 옵션을 열고, Ctrl + 마우스 휠로 크기를 바꿉니다.</span>
+        </p>
+        <div class="grid">
+          <div class="card"><div class="ico"><svg><use href="#i-globe" /></svg></div>
+            <h3><span lang="en">Any time zone</span><span lang="ko">모든 시간대</span></h3>
+            <p><span lang="en">Every time zone Windows knows, searchable by city, country or offset. Daylight saving time is handled for you.</span>
+               <span lang="ko">Windows가 아는 모든 시간대를 도시, 나라, 오프셋으로 검색해 고릅니다. 서머타임도 알아서 반영합니다.</span></p></div>
+          <div class="card"><div class="ico"><svg><use href="#i-clock" /></svg></div>
+            <h3><span lang="en">Digital or analog</span><span lang="ko">디지털 또는 아날로그</span></h3>
+            <p><span lang="en">Per clock. 12 or 24 hours, seconds on or off, date above or below.</span>
+               <span lang="ko">시계마다 따로 고릅니다. 12/24시간제, 초 표시, 날짜 위치까지.</span></p></div>
+          <div class="card"><div class="ico"><svg><use href="#i-layout" /></svg></div>
+            <h3><span lang="en">Labels on any side</span><span lang="ko">라벨은 원하는 쪽에</span></h3>
+            <p><span lang="en">Put the region name and the UTC offset (UTC+9, UTC−5…) above, below, left or right of each clock, or hide them.</span>
+               <span lang="ko">지역명과 UTC 표기(UTC+9, UTC−5…)를 시계마다 위, 아래, 왼쪽, 오른쪽에 붙이거나 숨깁니다.</span></p></div>
+          <div class="card"><div class="ico"><svg><use href="#i-pin" /></svg></div>
+            <h3><span lang="en">Always on top, any opacity</span><span lang="ko">항상 위, 불투명도 조절</span></h3>
+            <p><span lang="en">Keep a clock above your other windows, and fade it from 100% down to 20% so it never gets in the way.</span>
+               <span lang="ko">다른 창 위에 고정하고, 불투명도를 100%에서 20%까지 낮춰 거슬리지 않게 둘 수 있습니다.</span></p></div>
+          <div class="card"><div class="ico"><svg><use href="#i-brush" /></svg></div>
+            <h3><span lang="en">Fully themeable</span><span lang="ko">테마로 전부 바꾸기</span></h3>
+            <p><span lang="en">Six built-in themes. Make your own from the template: colours, gradients, fonts, images, hands and ticks. Changes show up the moment you save.</span>
+               <span lang="ko">기본 테마 6종. 템플릿으로 나만의 테마를 만들 수 있습니다. 색, 그라데이션, 글꼴, 이미지, 바늘, 눈금까지. 저장하는 순간 반영됩니다.</span></p></div>
+          <div class="card"><div class="ico"><svg><use href="#i-chart" /></svg></div>
+            <h3><span lang="en">Finance preset</span><span lang="ko">금융 프리셋</span></h3>
+            <p><span lang="en">One click opens US East, US West, Korea and UTC side by side.</span>
+               <span lang="ko">클릭 한 번으로 미국 동부, 미국 서부, 한국, UTC를 나란히 띄웁니다.</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2><span lang="en">Place the labels where they fit</span><span lang="ko">라벨은 어울리는 자리에</span></h2>
+          <p class="sub">
+            <span lang="en">A tall column of clocks reads best with names on the left; a row reads best with names underneath. Each clock decides for itself.</span>
+            <span lang="ko">세로로 쌓은 시계는 이름이 왼쪽에, 가로로 늘어선 시계는 아래에 있을 때 잘 읽힙니다. 시계마다 따로 정합니다.</span>
+          </p>
+        </div>
+        <img src="assets/shot-layouts.png" width="1920" height="1080" alt="Clocks with labels on different sides" loading="lazy" />
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <img src="assets/shot-themes.png" width="1920" height="1080" alt="Six built-in themes" loading="lazy" />
+        <div>
+          <h2><span lang="en">Make it yours</span><span lang="ko">내 취향대로</span></h2>
+          <p class="sub">
+            <span lang="en">A theme is a folder with one <code>theme.json</code> file, plus any images and fonts you want. The template lists every setting with its default, so you start by changing a value, not by reading a manual.</span>
+            <span lang="ko">테마는 <code>theme.json</code> 파일 하나와 원하는 이미지, 글꼴을 담은 폴더입니다. 템플릿에 모든 설정이 기본값과 함께 적혀 있어서, 설명서를 읽기보다 값을 바꾸는 것으로 시작하면 됩니다.</span>
+          </p>
+          <a class="btn" href="themes.html"><span lang="en">Read the theme guide</span><span lang="ko">테마 가이드 보기</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+          <div class="ico" style="flex:none"><svg><use href="#i-shield" /></svg></div>
+          <div>
+            <h3><span lang="en">Works offline. Collects nothing.</span><span lang="ko">오프라인 동작, 수집 없음</span></h3>
+            <p><span lang="en">The app has no network code. Time zones come from Windows, settings stay on your PC.</span>
+               <span lang="ko">앱에 네트워크 기능이 없습니다. 시간대 정보는 Windows에서, 설정은 내 PC에만 있습니다.</span>
+               <a href="privacy.html"><span lang="en">Privacy policy</span><span lang="ko">개인정보 처리방침</span></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Coldlapse</span>
+      <a href="themes.html"><span lang="en">Theme guide</span><span lang="ko">테마 가이드</span></a>
+      <a href="privacy.html"><span lang="en">Privacy</span><span lang="ko">개인정보 처리방침</span></a>
+      <a href="https://github.com/Coldlapse/worldclockgadget-site/issues"><span lang="en">Support</span><span lang="ko">문의</span></a>
+    </div>
+  </footer>
+</body>
+</html>
