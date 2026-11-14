@@ -53,6 +53,7 @@
       <li><a href="#en-digital"><code>digital</code></a></li>
       <li><a href="#en-analog"><code>analog</code></a> and image hands</li>
       <li><a href="#en-labels"><code>labels</code></a></li>
+      <li><a href="#en-timeline"><code>timeline</code></a></li>
       <li><a href="#en-share">Sharing a theme</a></li>
       <li><a href="#en-trouble">Troubleshooting</a></li>
     </ol>
@@ -154,6 +155,25 @@
   </table>
   <p>Daylight saving time is applied: New York shows <code>UTC−5</code> in winter and <code>UTC−4</code> in summer.</p>
 
+  <h2 id="en-timeline"><code>timeline</code>: the timeline gadget</h2>
+  <p>A vertical axis of this PC's local time: the recent past above the <em>now</em> line, the future below it. Each timeline gadget chooses its own range (how many hours back and ahead) and length; the theme decides how it looks. The card (<code>gadget</code>) and shadow are shared with the clocks.</p>
+  <table>
+    <tr><th>Key</th><th>Default</th><th>Notes</th></tr>
+    <tr><td><code>width</code></td><td><code>300</code></td><td>Content width at 100% size</td></tr>
+    <tr><td><code>showHeader</code>, <code>headerFont</code>, <code>headerTimeFont</code>, <code>headerSpacing</code></td><td><code>true</code>, 14 px, 14 px, <code>10</code></td><td>"Timeline" and the current time at the top</td></tr>
+    <tr><td><code>axisX</code></td><td><code>52</code></td><td>Distance from the left edge to the axis. Tick labels sit to its left</td></tr>
+    <tr><td><code>axisColor</code>, <code>axisWidth</code></td><td><code>"#40FFFFFF"</code>, <code>2</code></td><td></td></tr>
+    <tr><td><code>pastBackground</code></td><td><code>"#0FFFFFFF"</code></td><td>Shade over the part that is already past. <code>null</code> for none</td></tr>
+    <tr><td><code>showTicks</code>, <code>tickColor</code>, <code>tickFont</code>, <code>tickMinGap</code></td><td><code>true</code>, <code>"#33FFFFFF"</code>, 11 px, <code>34</code></td><td>Local-time ticks. The step (15 min to 1 week) is the smallest that keeps <code>tickMinGap</code> pixels between labels. Midnight shows the date</td></tr>
+    <tr><td><code>nowColor</code>, <code>nowWidth</code>, <code>nowFont</code></td><td>red, <code>2</code>, 11 px SemiBold</td><td>The <em>now</em> line and its label. <code>null</code> colour hides it</td></tr>
+    <tr><td><code>eventColor</code>, <code>pastEventColor</code></td><td><code>"#FF4EA8FF"</code>, <code>"#59FFFFFF"</code></td><td>Default reminder colour (each reminder can pick its own) and the colour of reminders that are over</td></tr>
+    <tr><td><code>dotRadius</code>, <code>rangeWidth</code></td><td><code>5</code>, <code>6</code></td><td>The dot at a reminder's start, and the bar along the axis for reminders with an end time</td></tr>
+    <tr><td><code>leaderColor</code></td><td><code>"#33FFFFFF"</code></td><td>Line from the axis to a label that had to move to avoid another</td></tr>
+    <tr><td><code>titleFont</code>, <code>countdownFont</code>, <code>detailFont</code></td><td>13 px SemiBold, 11 px SemiBold blue, 11 px</td><td>The three lines of a label: title, countdown ("in 1 h 21 min"), and the local time with the reminder's own zone time</td></tr>
+    <tr><td><code>labelSpacing</code></td><td><code>6</code></td><td>Gap between the axis and the labels, and between stacked labels</td></tr>
+  </table>
+  <p>Labels never overlap: when reminders are close together, the labels stack and a leader line points back to the moment. Labels that do not fit are counted at the bottom ("+3").</p>
+
   <h2 id="en-share">Sharing a theme</h2>
   <p>Zip the theme folder. The person you send it to unzips it into <code>Documents\World Clock Gadget\Themes\</code> (Settings → Themes → Open themes folder). Only include images and fonts you are allowed to share.</p>
 
@@ -181,6 +201,7 @@
       <li><a href="#ko-digital"><code>digital</code></a></li>
       <li><a href="#ko-analog"><code>analog</code></a>와 이미지 바늘</li>
       <li><a href="#ko-labels"><code>labels</code></a></li>
+      <li><a href="#ko-timeline"><code>timeline</code></a></li>
       <li><a href="#ko-share">테마 공유하기</a></li>
       <li><a href="#ko-trouble">문제 해결</a></li>
     </ol>
@@ -281,6 +302,25 @@
     <tr><td><code>minusSign</code></td><td><code>"−"</code></td><td>U+2212. 일반 하이픈을 쓰려면 <code>"-"</code></td></tr>
   </table>
   <p>서머타임을 반영합니다. 뉴욕은 겨울에 <code>UTC−5</code>, 여름에 <code>UTC−4</code>로 나옵니다.</p>
+
+  <h2 id="ko-timeline"><code>timeline</code>: 타임라인 가젯</h2>
+  <p>이 PC 시각의 세로 축입니다. <em>지금</em> 선 위는 조금 전, 아래는 앞으로의 시간입니다. 범위(몇 시간 전부터 몇 시간 뒤까지)와 길이는 타임라인 가젯마다 정하고, 모양은 테마가 정합니다. 카드(<code>gadget</code>)와 그림자는 시계와 같이 씁니다.</p>
+  <table>
+    <tr><th>키</th><th>기본값</th><th>설명</th></tr>
+    <tr><td><code>width</code></td><td><code>300</code></td><td>크기 100% 기준 내용 너비</td></tr>
+    <tr><td><code>showHeader</code>, <code>headerFont</code>, <code>headerTimeFont</code>, <code>headerSpacing</code></td><td><code>true</code>, 14 px, 14 px, <code>10</code></td><td>맨 위의 "타임라인"과 현재 시각</td></tr>
+    <tr><td><code>axisX</code></td><td><code>52</code></td><td>왼쪽 끝에서 축까지 거리. 눈금 글자는 축 왼쪽에 놓입니다</td></tr>
+    <tr><td><code>axisColor</code>, <code>axisWidth</code></td><td><code>"#40FFFFFF"</code>, <code>2</code></td><td></td></tr>
+    <tr><td><code>pastBackground</code></td><td><code>"#0FFFFFFF"</code></td><td>이미 지난 부분의 음영. 없애려면 <code>null</code></td></tr>
+    <tr><td><code>showTicks</code>, <code>tickColor</code>, <code>tickFont</code>, <code>tickMinGap</code></td><td><code>true</code>, <code>"#33FFFFFF"</code>, 11 px, <code>34</code></td><td>PC 시각 눈금. 간격(15분 ~ 1주)은 글자 사이가 <code>tickMinGap</code> 픽셀 이상 되는 가장 작은 값으로 정합니다. 자정에는 날짜를 씁니다</td></tr>
+    <tr><td><code>nowColor</code>, <code>nowWidth</code>, <code>nowFont</code></td><td>빨강, <code>2</code>, 11 px SemiBold</td><td><em>지금</em> 선과 그 글자. 색을 <code>null</code>로 하면 숨깁니다</td></tr>
+    <tr><td><code>eventColor</code>, <code>pastEventColor</code></td><td><code>"#FF4EA8FF"</code>, <code>"#59FFFFFF"</code></td><td>알림 기본 색(알림마다 따로 고를 수 있음)과 끝난 알림의 색</td></tr>
+    <tr><td><code>dotRadius</code>, <code>rangeWidth</code></td><td><code>5</code>, <code>6</code></td><td>시작 시점의 점, 종료 시각이 있는 알림을 축 위에 그리는 막대 굵기</td></tr>
+    <tr><td><code>leaderColor</code></td><td><code>"#33FFFFFF"</code></td><td>겹치지 않으려고 자리를 옮긴 글자에서 축으로 이어지는 선</td></tr>
+    <tr><td><code>titleFont</code>, <code>countdownFont</code>, <code>detailFont</code></td><td>13 px SemiBold, 11 px SemiBold 파랑, 11 px</td><td>글자 세 줄: 제목, 남은 시간("1시간 21분 후"), PC 시각과 알림 시간대의 시각</td></tr>
+    <tr><td><code>labelSpacing</code></td><td><code>6</code></td><td>축과 글자 사이, 쌓인 글자끼리의 간격</td></tr>
+  </table>
+  <p>글자는 겹치지 않습니다. 알림이 몰려 있으면 글자를 차례로 쌓고 가는 선으로 원래 시점을 가리킵니다. 들어가지 못한 알림은 맨 아래에 개수로 표시합니다("+3").</p>
 
   <h2 id="ko-share">테마 공유하기</h2>
   <p>테마 폴더를 zip으로 묶어 보내면, 받는 사람이 <code>문서\World Clock Gadget\Themes\</code>(설정 → 테마 → 테마 폴더 열기)에 풀면 됩니다. 공유해도 되는 이미지와 글꼴만 넣으세요.</p>
