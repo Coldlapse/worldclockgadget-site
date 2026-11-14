@@ -1,0 +1,1766 @@
+{
+  "formatVersion": 1,
+  "revision": 1,
+  "updated": "2026-11-14",
+  "markets": [
+    {
+      "id": "kr",
+      "name": {
+        "en": "Korea",
+        "ko": "한국"
+      },
+      "exchange": {
+        "en": "KRX · NXT",
+        "ko": "KRX · NXT"
+      },
+      "timeZone": "Korea Standard Time",
+      "schedules": [
+        {
+          "from": "2026-09-14",
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2026-12-25",
+          "name": {
+            "en": "Christmas",
+            "ko": "성탄절"
+          }
+        },
+        {
+          "date": "2026-12-31",
+          "name": {
+            "en": "Year-end closing",
+            "ko": "연말 휴장일"
+          }
+        },
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "신정"
+          }
+        },
+        {
+          "date": "2027-02-08",
+          "name": {
+            "en": "Seollal",
+            "ko": "설날 연휴"
+          }
+        },
+        {
+          "date": "2027-02-09",
+          "name": {
+            "en": "Seollal (substitute)",
+            "ko": "대체공휴일(설날)"
+          }
+        },
+        {
+          "date": "2027-03-01",
+          "name": {
+            "en": "Independence Movement Day",
+            "ko": "삼일절"
+          }
+        },
+        {
+          "date": "2027-05-03",
+          "name": {
+            "en": "Labor Day (substitute)",
+            "ko": "대체공휴일(노동절)"
+          }
+        },
+        {
+          "date": "2027-05-05",
+          "name": {
+            "en": "Children's Day",
+            "ko": "어린이날"
+          }
+        },
+        {
+          "date": "2027-05-13",
+          "name": {
+            "en": "Buddha's Birthday",
+            "ko": "부처님오신날"
+          }
+        },
+        {
+          "date": "2027-07-19",
+          "name": {
+            "en": "Constitution Day (substitute)",
+            "ko": "대체공휴일(제헌절)"
+          }
+        },
+        {
+          "date": "2027-08-16",
+          "name": {
+            "en": "Liberation Day (substitute)",
+            "ko": "대체공휴일(광복절)"
+          }
+        },
+        {
+          "date": "2027-09-14",
+          "name": {
+            "en": "Chuseok",
+            "ko": "추석 연휴"
+          }
+        },
+        {
+          "date": "2027-09-15",
+          "name": {
+            "en": "Chuseok",
+            "ko": "추석"
+          }
+        },
+        {
+          "date": "2027-09-16",
+          "name": {
+            "en": "Chuseok",
+            "ko": "추석 연휴"
+          }
+        },
+        {
+          "date": "2027-10-04",
+          "name": {
+            "en": "National Foundation Day (substitute)",
+            "ko": "대체공휴일(개천절)"
+          }
+        },
+        {
+          "date": "2027-10-11",
+          "name": {
+            "en": "Hangul Day (substitute)",
+            "ko": "대체공휴일(한글날)"
+          }
+        },
+        {
+          "date": "2027-12-27",
+          "name": {
+            "en": "Christmas (substitute)",
+            "ko": "대체공휴일(성탄절)"
+          }
+        },
+        {
+          "date": "2027-12-31",
+          "name": {
+            "en": "Year-end closing",
+            "ko": "연말 휴장일"
+          }
+        }
+      ],
+      "specialDays": [
+        {
+          "date": "2026-11-19",
+          "name": {
+            "en": "CSAT day: opens 10:00",
+            "ko": "수능일: 10시 개장"
+          },
+          "sessions": [
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "09:30",
+              "end": "10:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "10:00",
+              "end": "16:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "16:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "16:40",
+              "end": "17:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "17:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2027-01-04",
+          "name": {
+            "en": "First trading day: opens 10:00",
+            "ko": "새해 첫 거래일: 10시 개장"
+          },
+          "sessions": [
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "10:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2027-11-18",
+          "name": {
+            "en": "CSAT day: opens 10:00",
+            "ko": "수능일: 10시 개장"
+          },
+          "sessions": [
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "09:30",
+              "end": "10:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "10:00",
+              "end": "16:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "16:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "16:40",
+              "end": "17:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "17:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        }
+      ],
+      "coverageUntil": "2027-12-31"
+    },
+    {
+      "id": "us",
+      "name": {
+        "en": "United States",
+        "ko": "미국"
+      },
+      "exchange": {
+        "en": "NYSE · Nasdaq",
+        "ko": "NYSE · 나스닥"
+      },
+      "timeZone": "Eastern Standard Time",
+      "schedules": [
+        {
+          "sessions": [
+            {
+              "id": "pre",
+              "kind": "pre",
+              "start": "04:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-market",
+                "ko": "프리장"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "16:00",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "After-hours",
+                "ko": "애프터장"
+              }
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2026-11-26",
+          "name": {
+            "en": "Thanksgiving Day",
+            "ko": "추수감사절"
+          }
+        },
+        {
+          "date": "2026-12-25",
+          "name": {
+            "en": "Christmas Day",
+            "ko": "크리스마스"
+          }
+        },
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "새해 첫날"
+          }
+        },
+        {
+          "date": "2027-01-18",
+          "name": {
+            "en": "Martin Luther King, Jr. Day",
+            "ko": "마틴 루서 킹 주니어 데이"
+          }
+        },
+        {
+          "date": "2027-02-15",
+          "name": {
+            "en": "Washington's Birthday",
+            "ko": "대통령의 날"
+          }
+        },
+        {
+          "date": "2027-03-26",
+          "name": {
+            "en": "Good Friday",
+            "ko": "성금요일"
+          }
+        },
+        {
+          "date": "2027-05-31",
+          "name": {
+            "en": "Memorial Day",
+            "ko": "메모리얼 데이"
+          }
+        },
+        {
+          "date": "2027-06-18",
+          "name": {
+            "en": "Juneteenth (observed)",
+            "ko": "준틴스(대체 휴장)"
+          }
+        },
+        {
+          "date": "2027-07-05",
+          "name": {
+            "en": "Independence Day (observed)",
+            "ko": "독립기념일(대체 휴장)"
+          }
+        },
+        {
+          "date": "2027-09-06",
+          "name": {
+            "en": "Labor Day",
+            "ko": "노동절"
+          }
+        },
+        {
+          "date": "2027-11-25",
+          "name": {
+            "en": "Thanksgiving Day",
+            "ko": "추수감사절"
+          }
+        },
+        {
+          "date": "2027-12-24",
+          "name": {
+            "en": "Christmas Day (observed)",
+            "ko": "크리스마스(대체 휴장)"
+          }
+        }
+      ],
+      "specialDays": [
+        {
+          "date": "2026-11-27",
+          "name": {
+            "en": "Early close 13:00",
+            "ko": "조기 마감 13:00"
+          },
+          "sessions": [
+            {
+              "id": "pre",
+              "kind": "pre",
+              "start": "04:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-market",
+                "ko": "프리장"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "13:00",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "after",
+              "kind": "post",
+              "start": "13:00",
+              "end": "17:00",
+              "label": {
+                "en": "After-hours",
+                "ko": "애프터장"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2026-12-24",
+          "name": {
+            "en": "Early close 13:00",
+            "ko": "조기 마감 13:00"
+          },
+          "sessions": [
+            {
+              "id": "pre",
+              "kind": "pre",
+              "start": "04:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-market",
+                "ko": "프리장"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "13:00",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "after",
+              "kind": "post",
+              "start": "13:00",
+              "end": "17:00",
+              "label": {
+                "en": "After-hours",
+                "ko": "애프터장"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2027-11-26",
+          "name": {
+            "en": "Early close 13:00",
+            "ko": "조기 마감 13:00"
+          },
+          "sessions": [
+            {
+              "id": "pre",
+              "kind": "pre",
+              "start": "04:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-market",
+                "ko": "프리장"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "13:00",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "after",
+              "kind": "post",
+              "start": "13:00",
+              "end": "17:00",
+              "label": {
+                "en": "After-hours",
+                "ko": "애프터장"
+              }
+            }
+          ]
+        }
+      ],
+      "coverageUntil": "2027-12-31"
+    },
+    {
+      "id": "jp",
+      "name": {
+        "en": "Japan",
+        "ko": "일본"
+      },
+      "exchange": {
+        "en": "TSE",
+        "ko": "도쿄증권거래소"
+      },
+      "timeZone": "Tokyo Standard Time",
+      "schedules": [
+        {
+          "sessions": [
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "11:30",
+              "label": {
+                "en": "Morning session",
+                "ko": "전장"
+              }
+            },
+            {
+              "id": "pm",
+              "kind": "regular",
+              "start": "12:30",
+              "end": "15:30",
+              "label": {
+                "en": "Afternoon session",
+                "ko": "후장"
+              }
+            },
+            {
+              "id": "futures-night",
+              "kind": "futures",
+              "start": "17:00",
+              "end": "06:00",
+              "label": {
+                "en": "Nikkei 225 futures night (OSE)",
+                "ko": "닛케이225 선물 야간(OSE)"
+              },
+              "defaultOn": false
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2026-11-23",
+          "name": {
+            "en": "Labour Thanksgiving Day",
+            "ko": "근로감사의 날"
+          }
+        },
+        {
+          "date": "2026-12-31",
+          "name": {
+            "en": "Year-end holiday",
+            "ko": "연말 휴장"
+          }
+        },
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "새해 첫날"
+          }
+        },
+        {
+          "date": "2027-01-11",
+          "name": {
+            "en": "Coming of Age Day",
+            "ko": "성인의 날"
+          }
+        },
+        {
+          "date": "2027-02-11",
+          "name": {
+            "en": "National Foundation Day",
+            "ko": "건국기념일"
+          }
+        },
+        {
+          "date": "2027-02-23",
+          "name": {
+            "en": "Emperor's Birthday",
+            "ko": "천황 탄생일"
+          }
+        },
+        {
+          "date": "2027-03-22",
+          "name": {
+            "en": "Vernal Equinox Day (observed)",
+            "ko": "춘분의 날(대체)"
+          }
+        },
+        {
+          "date": "2027-04-29",
+          "name": {
+            "en": "Showa Day",
+            "ko": "쇼와의 날"
+          }
+        },
+        {
+          "date": "2027-05-03",
+          "name": {
+            "en": "Constitution Memorial Day",
+            "ko": "헌법기념일"
+          }
+        },
+        {
+          "date": "2027-05-04",
+          "name": {
+            "en": "Greenery Day",
+            "ko": "녹색의 날"
+          }
+        },
+        {
+          "date": "2027-05-05",
+          "name": {
+            "en": "Children's Day",
+            "ko": "어린이날"
+          }
+        },
+        {
+          "date": "2027-07-19",
+          "name": {
+            "en": "Marine Day",
+            "ko": "바다의 날"
+          }
+        },
+        {
+          "date": "2027-08-11",
+          "name": {
+            "en": "Mountain Day",
+            "ko": "산의 날"
+          }
+        },
+        {
+          "date": "2027-09-20",
+          "name": {
+            "en": "Respect for the Aged Day",
+            "ko": "경로의 날"
+          }
+        },
+        {
+          "date": "2027-09-23",
+          "name": {
+            "en": "Autumnal Equinox Day",
+            "ko": "추분의 날"
+          }
+        },
+        {
+          "date": "2027-10-11",
+          "name": {
+            "en": "Sports Day",
+            "ko": "스포츠의 날"
+          }
+        },
+        {
+          "date": "2027-11-03",
+          "name": {
+            "en": "Culture Day",
+            "ko": "문화의 날"
+          }
+        },
+        {
+          "date": "2027-11-23",
+          "name": {
+            "en": "Labour Thanksgiving Day",
+            "ko": "근로감사의 날"
+          }
+        },
+        {
+          "date": "2027-12-31",
+          "name": {
+            "en": "Year-end holiday",
+            "ko": "연말 휴장"
+          }
+        }
+      ],
+      "specialDays": [],
+      "coverageUntil": "2027-12-31"
+    },
+    {
+      "id": "hk",
+      "name": {
+        "en": "Hong Kong",
+        "ko": "홍콩"
+      },
+      "exchange": {
+        "en": "HKEX",
+        "ko": "홍콩거래소"
+      },
+      "timeZone": "Asia/Hong_Kong",
+      "schedules": [
+        {
+          "sessions": [
+            {
+              "id": "preopen",
+              "kind": "auction",
+              "start": "09:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-opening session",
+                "ko": "개장 전 동시호가"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "12:00",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "pm",
+              "kind": "regular",
+              "start": "13:00",
+              "end": "16:00",
+              "label": {
+                "en": "Afternoon session",
+                "ko": "오후장"
+              }
+            },
+            {
+              "id": "cas",
+              "kind": "auction",
+              "start": "16:00",
+              "end": "16:10",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            },
+            {
+              "id": "futures-night",
+              "kind": "futures",
+              "start": "17:00",
+              "end": "03:00",
+              "label": {
+                "en": "HSI futures after-hours",
+                "ko": "항셍 선물 야간(AHT)"
+              },
+              "defaultOn": false
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2026-12-25",
+          "name": {
+            "en": "Christmas Day",
+            "ko": "크리스마스"
+          }
+        },
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "신정"
+          }
+        },
+        {
+          "date": "2027-02-08",
+          "name": {
+            "en": "Lunar New Year (3rd day)",
+            "ko": "춘절 셋째 날"
+          }
+        },
+        {
+          "date": "2027-02-09",
+          "name": {
+            "en": "Lunar New Year (4th day)",
+            "ko": "춘절 넷째 날"
+          }
+        },
+        {
+          "date": "2027-03-26",
+          "name": {
+            "en": "Good Friday",
+            "ko": "성금요일"
+          }
+        },
+        {
+          "date": "2027-03-29",
+          "name": {
+            "en": "Easter Monday",
+            "ko": "부활절 월요일"
+          }
+        },
+        {
+          "date": "2027-04-05",
+          "name": {
+            "en": "Ching Ming Festival",
+            "ko": "청명절"
+          }
+        },
+        {
+          "date": "2027-05-13",
+          "name": {
+            "en": "The Birthday of the Buddha",
+            "ko": "부처님 오신 날"
+          }
+        },
+        {
+          "date": "2027-06-09",
+          "name": {
+            "en": "Tuen Ng Festival",
+            "ko": "단오절"
+          }
+        },
+        {
+          "date": "2027-07-01",
+          "name": {
+            "en": "HKSAR Establishment Day",
+            "ko": "홍콩 특별행정구 수립 기념일"
+          }
+        },
+        {
+          "date": "2027-09-16",
+          "name": {
+            "en": "Day after Mid-Autumn Festival",
+            "ko": "중추절 다음 날"
+          }
+        },
+        {
+          "date": "2027-10-01",
+          "name": {
+            "en": "National Day",
+            "ko": "국경절"
+          }
+        },
+        {
+          "date": "2027-10-08",
+          "name": {
+            "en": "Chung Yeung Festival",
+            "ko": "중양절"
+          }
+        },
+        {
+          "date": "2027-12-27",
+          "name": {
+            "en": "First weekday after Christmas",
+            "ko": "크리스마스 다음 첫 평일"
+          }
+        }
+      ],
+      "specialDays": [
+        {
+          "date": "2026-12-24",
+          "name": {
+            "en": "Christmas Eve: half day",
+            "ko": "크리스마스이브: 오전장만"
+          },
+          "sessions": [
+            {
+              "id": "preopen",
+              "kind": "auction",
+              "start": "09:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-opening session",
+                "ko": "개장 전 동시호가"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "12:00",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "cas",
+              "kind": "auction",
+              "start": "12:00",
+              "end": "12:10",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2026-12-31",
+          "name": {
+            "en": "New Year's Eve: half day",
+            "ko": "섣달그믐: 오전장만"
+          },
+          "sessions": [
+            {
+              "id": "preopen",
+              "kind": "auction",
+              "start": "09:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-opening session",
+                "ko": "개장 전 동시호가"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "12:00",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "cas",
+              "kind": "auction",
+              "start": "12:00",
+              "end": "12:10",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2027-02-05",
+          "name": {
+            "en": "Lunar New Year's Eve: half day",
+            "ko": "춘절 전야: 오전장만"
+          },
+          "sessions": [
+            {
+              "id": "preopen",
+              "kind": "auction",
+              "start": "09:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-opening session",
+                "ko": "개장 전 동시호가"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "12:00",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "cas",
+              "kind": "auction",
+              "start": "12:00",
+              "end": "12:10",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2027-12-24",
+          "name": {
+            "en": "Christmas Eve: half day",
+            "ko": "크리스마스이브: 오전장만"
+          },
+          "sessions": [
+            {
+              "id": "preopen",
+              "kind": "auction",
+              "start": "09:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-opening session",
+                "ko": "개장 전 동시호가"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "12:00",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "cas",
+              "kind": "auction",
+              "start": "12:00",
+              "end": "12:10",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2027-12-31",
+          "name": {
+            "en": "New Year's Eve: half day",
+            "ko": "섣달그믐: 오전장만"
+          },
+          "sessions": [
+            {
+              "id": "preopen",
+              "kind": "auction",
+              "start": "09:00",
+              "end": "09:30",
+              "label": {
+                "en": "Pre-opening session",
+                "ko": "개장 전 동시호가"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "12:00",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "cas",
+              "kind": "auction",
+              "start": "12:00",
+              "end": "12:10",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        }
+      ],
+      "coverageUntil": "2027-12-31"
+    },
+    {
+      "id": "cn",
+      "name": {
+        "en": "China",
+        "ko": "중국"
+      },
+      "exchange": {
+        "en": "SSE · SZSE",
+        "ko": "상하이 · 선전"
+      },
+      "timeZone": "China Standard Time",
+      "schedules": [
+        {
+          "sessions": [
+            {
+              "id": "open-auction",
+              "kind": "auction",
+              "start": "09:15",
+              "end": "09:25",
+              "label": {
+                "en": "Opening call auction",
+                "ko": "개장 집합경쟁"
+              }
+            },
+            {
+              "id": "am",
+              "kind": "regular",
+              "start": "09:30",
+              "end": "11:30",
+              "label": {
+                "en": "Morning session",
+                "ko": "오전장"
+              }
+            },
+            {
+              "id": "pm",
+              "kind": "regular",
+              "start": "13:00",
+              "end": "15:00",
+              "label": {
+                "en": "Afternoon session",
+                "ko": "오후장"
+              }
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "신정"
+          }
+        },
+        {
+          "date": "2027-02-05",
+          "name": {
+            "en": "Spring Festival",
+            "ko": "춘절"
+          }
+        },
+        {
+          "date": "2027-02-08",
+          "name": {
+            "en": "Spring Festival",
+            "ko": "춘절"
+          }
+        },
+        {
+          "date": "2027-02-09",
+          "name": {
+            "en": "Spring Festival",
+            "ko": "춘절"
+          }
+        },
+        {
+          "date": "2027-02-10",
+          "name": {
+            "en": "Spring Festival",
+            "ko": "춘절"
+          }
+        },
+        {
+          "date": "2027-02-11",
+          "name": {
+            "en": "Spring Festival",
+            "ko": "춘절"
+          }
+        },
+        {
+          "date": "2027-02-12",
+          "name": {
+            "en": "Spring Festival",
+            "ko": "춘절"
+          }
+        },
+        {
+          "date": "2027-04-05",
+          "name": {
+            "en": "Qingming Festival",
+            "ko": "청명절"
+          }
+        },
+        {
+          "date": "2027-05-03",
+          "name": {
+            "en": "Labour Day",
+            "ko": "노동절"
+          }
+        },
+        {
+          "date": "2027-05-04",
+          "name": {
+            "en": "Labour Day",
+            "ko": "노동절"
+          }
+        },
+        {
+          "date": "2027-05-05",
+          "name": {
+            "en": "Labour Day",
+            "ko": "노동절"
+          }
+        },
+        {
+          "date": "2027-06-09",
+          "name": {
+            "en": "Dragon Boat Festival",
+            "ko": "단오절"
+          }
+        },
+        {
+          "date": "2027-09-15",
+          "name": {
+            "en": "Mid-Autumn Festival",
+            "ko": "중추절"
+          }
+        },
+        {
+          "date": "2027-10-01",
+          "name": {
+            "en": "National Day",
+            "ko": "국경절"
+          }
+        },
+        {
+          "date": "2027-10-04",
+          "name": {
+            "en": "National Day",
+            "ko": "국경절"
+          }
+        },
+        {
+          "date": "2027-10-05",
+          "name": {
+            "en": "National Day",
+            "ko": "국경절"
+          }
+        },
+        {
+          "date": "2027-10-06",
+          "name": {
+            "en": "National Day",
+            "ko": "국경절"
+          }
+        },
+        {
+          "date": "2027-10-07",
+          "name": {
+            "en": "National Day",
+            "ko": "국경절"
+          }
+        }
+      ],
+      "specialDays": [],
+      "coverageUntil": "2027-12-31"
+    },
+    {
+      "id": "uk",
+      "name": {
+        "en": "United Kingdom",
+        "ko": "영국"
+      },
+      "exchange": {
+        "en": "LSE",
+        "ko": "런던증권거래소"
+      },
+      "timeZone": "GMT Standard Time",
+      "schedules": [
+        {
+          "sessions": [
+            {
+              "id": "open-auction",
+              "kind": "auction",
+              "start": "07:50",
+              "end": "08:00",
+              "label": {
+                "en": "Opening auction",
+                "ko": "개장 동시호가"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "08:00",
+              "end": "16:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "close-auction",
+              "kind": "auction",
+              "start": "16:30",
+              "end": "16:35",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2026-12-25",
+          "name": {
+            "en": "Christmas Day",
+            "ko": "크리스마스"
+          }
+        },
+        {
+          "date": "2026-12-28",
+          "name": {
+            "en": "Boxing Day (substitute)",
+            "ko": "박싱데이(대체)"
+          }
+        },
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "신정"
+          }
+        },
+        {
+          "date": "2027-03-26",
+          "name": {
+            "en": "Good Friday",
+            "ko": "성금요일"
+          }
+        },
+        {
+          "date": "2027-03-29",
+          "name": {
+            "en": "Easter Monday",
+            "ko": "부활절 월요일"
+          }
+        },
+        {
+          "date": "2027-05-03",
+          "name": {
+            "en": "Early May Bank Holiday",
+            "ko": "5월 초 공휴일"
+          }
+        },
+        {
+          "date": "2027-05-31",
+          "name": {
+            "en": "Spring Bank Holiday",
+            "ko": "봄 공휴일"
+          }
+        },
+        {
+          "date": "2027-08-30",
+          "name": {
+            "en": "Summer Bank Holiday",
+            "ko": "여름 공휴일"
+          }
+        },
+        {
+          "date": "2027-12-27",
+          "name": {
+            "en": "Christmas Day (substitute)",
+            "ko": "크리스마스(대체)"
+          }
+        },
+        {
+          "date": "2027-12-28",
+          "name": {
+            "en": "Boxing Day (substitute)",
+            "ko": "박싱데이(대체)"
+          }
+        }
+      ],
+      "specialDays": [
+        {
+          "date": "2026-12-24",
+          "name": {
+            "en": "Christmas Eve: closes 12:30",
+            "ko": "크리스마스이브: 12:30 마감"
+          },
+          "sessions": [
+            {
+              "id": "open-auction",
+              "kind": "auction",
+              "start": "07:50",
+              "end": "08:00",
+              "label": {
+                "en": "Opening auction",
+                "ko": "개장 동시호가"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "08:00",
+              "end": "12:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "close-auction",
+              "kind": "auction",
+              "start": "12:30",
+              "end": "12:35",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2026-12-31",
+          "name": {
+            "en": "New Year's Eve: closes 12:30",
+            "ko": "섣달그믐: 12:30 마감"
+          },
+          "sessions": [
+            {
+              "id": "open-auction",
+              "kind": "auction",
+              "start": "07:50",
+              "end": "08:00",
+              "label": {
+                "en": "Opening auction",
+                "ko": "개장 동시호가"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "08:00",
+              "end": "12:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "close-auction",
+              "kind": "auction",
+              "start": "12:30",
+              "end": "12:35",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2027-12-24",
+          "name": {
+            "en": "Christmas Eve: closes 12:30",
+            "ko": "크리스마스이브: 12:30 마감"
+          },
+          "sessions": [
+            {
+              "id": "open-auction",
+              "kind": "auction",
+              "start": "07:50",
+              "end": "08:00",
+              "label": {
+                "en": "Opening auction",
+                "ko": "개장 동시호가"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "08:00",
+              "end": "12:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "close-auction",
+              "kind": "auction",
+              "start": "12:30",
+              "end": "12:35",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        },
+        {
+          "date": "2027-12-31",
+          "name": {
+            "en": "New Year's Eve: closes 12:30",
+            "ko": "섣달그믐: 12:30 마감"
+          },
+          "sessions": [
+            {
+              "id": "open-auction",
+              "kind": "auction",
+              "start": "07:50",
+              "end": "08:00",
+              "label": {
+                "en": "Opening auction",
+                "ko": "개장 동시호가"
+              }
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "08:00",
+              "end": "12:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              }
+            },
+            {
+              "id": "close-auction",
+              "kind": "auction",
+              "start": "12:30",
+              "end": "12:35",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        }
+      ],
+      "coverageUntil": "2027-12-31"
+    },
+    {
+      "id": "de",
+      "name": {
+        "en": "Germany",
+        "ko": "독일"
+      },
+      "exchange": {
+        "en": "Xetra",
+        "ko": "Xetra"
+      },
+      "timeZone": "W. Europe Standard Time",
+      "schedules": [
+        {
+          "sessions": [
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "17:30",
+              "label": {
+                "en": "Continuous trading",
+                "ko": "연속 매매"
+              }
+            },
+            {
+              "id": "close-auction",
+              "kind": "auction",
+              "start": "17:30",
+              "end": "17:35",
+              "label": {
+                "en": "Closing auction",
+                "ko": "종가 동시호가"
+              }
+            }
+          ]
+        }
+      ],
+      "holidays": [
+        {
+          "date": "2026-12-24",
+          "name": {
+            "en": "Christmas Eve",
+            "ko": "크리스마스이브"
+          }
+        },
+        {
+          "date": "2026-12-25",
+          "name": {
+            "en": "Christmas Day",
+            "ko": "크리스마스"
+          }
+        },
+        {
+          "date": "2026-12-31",
+          "name": {
+            "en": "New Year's Eve",
+            "ko": "섣달그믐"
+          }
+        },
+        {
+          "date": "2027-01-01",
+          "name": {
+            "en": "New Year's Day",
+            "ko": "신정"
+          }
+        },
+        {
+          "date": "2027-03-26",
+          "name": {
+            "en": "Good Friday",
+            "ko": "성금요일"
+          }
+        },
+        {
+          "date": "2027-03-29",
+          "name": {
+            "en": "Easter Monday",
+            "ko": "부활절 월요일"
+          }
+        },
+        {
+          "date": "2027-12-24",
+          "name": {
+            "en": "Christmas Eve",
+            "ko": "크리스마스이브"
+          }
+        },
+        {
+          "date": "2027-12-31",
+          "name": {
+            "en": "New Year's Eve",
+            "ko": "섣달그믐"
+          }
+        }
+      ],
+      "specialDays": [],
+      "coverageUntil": "2027-12-31"
+    }
+  ]
+}
