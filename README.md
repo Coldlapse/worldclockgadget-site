@@ -1,11 +1,11 @@
 # worldclockgadget-site
 
-Financial World Clock Gadget의 랜딩 페이지, 개인정보 처리방침, 테마 가이드. Financial World Clock Gadget은 Microsoft Store에서 파는 Windows용 바탕 화면 세계 시계 앱이다.
+Zoneline의 랜딩 페이지, 개인정보 처리방침, 테마 가이드. Zoneline은 Microsoft Store에서 파는 Windows용 바탕 화면 세계 시계 앱이다.
 GitHub Pages로 서비스하는 정적 사이트다(빌드 단계 없음).
 
-- 주소: https://worldclock.coldlapse.dev
-- 개인정보 처리방침: https://worldclock.coldlapse.dev/privacy.html (Microsoft Store에 제출하는 URL)
-- 테마 가이드: https://worldclock.coldlapse.dev/themes.html
+- 주소: https://zoneline.coldlapse.dev
+- 개인정보 처리방침: https://zoneline.coldlapse.dev/privacy.html (Microsoft Store에 제출하는 URL)
+- 테마 가이드: https://zoneline.coldlapse.dev/themes.html
 - 지원: 이 저장소의 issues
 
 영어와 한국어. 처음 방문하면 브라우저 언어를 따른다(한국어 브라우저는 한국어, 나머지는 영어).

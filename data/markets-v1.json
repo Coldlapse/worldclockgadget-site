@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "revision": 1,
+  "revision": 2,
   "updated": "2026-11-14",
   "markets": [
     {
@@ -83,6 +83,18 @@
                 "ko": "KRX 애프터마켓"
               },
               "venue": "KRX"
+            },
+            {
+              "id": "futures-night",
+              "kind": "futures",
+              "start": "18:00",
+              "end": "06:00",
+              "label": {
+                "en": "KOSPI 200 futures night (KRX)",
+                "ko": "코스피200 선물 야간(KRX)"
+              },
+              "venue": "KRX",
+              "defaultOn": false
             }
           ]
         }
@@ -277,6 +289,18 @@
                 "ko": "KRX 애프터마켓"
               },
               "venue": "KRX"
+            },
+            {
+              "id": "futures-night",
+              "kind": "futures",
+              "start": "18:00",
+              "end": "06:00",
+              "label": {
+                "en": "KOSPI 200 futures night (KRX)",
+                "ko": "코스피200 선물 야간(KRX)"
+              },
+              "venue": "KRX",
+              "defaultOn": false
             }
           ]
         },
@@ -330,6 +354,18 @@
                 "ko": "KRX 애프터마켓"
               },
               "venue": "KRX"
+            },
+            {
+              "id": "futures-night",
+              "kind": "futures",
+              "start": "18:00",
+              "end": "06:00",
+              "label": {
+                "en": "KOSPI 200 futures night (KRX)",
+                "ko": "코스피200 선물 야간(KRX)"
+              },
+              "venue": "KRX",
+              "defaultOn": false
             }
           ]
         },
@@ -388,6 +424,468 @@
               "id": "krx-after",
               "kind": "post",
               "start": "17:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "futures-night",
+              "kind": "futures",
+              "start": "18:00",
+              "end": "06:00",
+              "label": {
+                "en": "KOSPI 200 futures night (KRX)",
+                "ko": "코스피200 선물 야간(KRX)"
+              },
+              "venue": "KRX",
+              "defaultOn": false
+            }
+          ]
+        },
+        {
+          "date": "2026-12-24",
+          "name": {
+            "en": "No night futures (holiday next day)",
+            "ko": "야간 선물 휴장(다음 날 휴장)"
+          },
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2026-12-30",
+          "name": {
+            "en": "No night futures (holiday next day)",
+            "ko": "야간 선물 휴장(다음 날 휴장)"
+          },
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2027-05-04",
+          "name": {
+            "en": "No night futures (holiday next day)",
+            "ko": "야간 선물 휴장(다음 날 휴장)"
+          },
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2027-05-12",
+          "name": {
+            "en": "No night futures (holiday next day)",
+            "ko": "야간 선물 휴장(다음 날 휴장)"
+          },
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2027-09-13",
+          "name": {
+            "en": "No night futures (holiday next day)",
+            "ko": "야간 선물 휴장(다음 날 휴장)"
+          },
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
+              "end": "20:00",
+              "label": {
+                "en": "KRX after-market",
+                "ko": "KRX 애프터마켓"
+              },
+              "venue": "KRX"
+            }
+          ]
+        },
+        {
+          "date": "2027-12-30",
+          "name": {
+            "en": "No night futures (holiday next day)",
+            "ko": "야간 선물 휴장(다음 날 휴장)"
+          },
+          "sessions": [
+            {
+              "id": "nxt-pre",
+              "kind": "pre",
+              "start": "08:00",
+              "end": "08:50",
+              "label": {
+                "en": "NXT pre-market",
+                "ko": "NXT 프리마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-open-auction",
+              "kind": "auction",
+              "start": "08:30",
+              "end": "09:00",
+              "label": {
+                "en": "KRX opening auction",
+                "ko": "KRX 장 시작 동시호가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "regular",
+              "kind": "regular",
+              "start": "09:00",
+              "end": "15:30",
+              "label": {
+                "en": "Regular session",
+                "ko": "정규장"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "nxt-after",
+              "kind": "post",
+              "start": "15:30",
+              "end": "20:00",
+              "label": {
+                "en": "NXT after-market",
+                "ko": "NXT 애프터마켓"
+              },
+              "venue": "NXT"
+            },
+            {
+              "id": "krx-post-close",
+              "kind": "post",
+              "start": "15:40",
+              "end": "16:00",
+              "label": {
+                "en": "KRX after-hours closing price",
+                "ko": "KRX 장후 시간외 종가"
+              },
+              "venue": "KRX"
+            },
+            {
+              "id": "krx-after",
+              "kind": "post",
+              "start": "16:00",
               "end": "20:00",
               "label": {
                 "en": "KRX after-market",
