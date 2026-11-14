@@ -132,3 +132,8 @@ footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--m
 footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
 footer a { color: var(--muted); }
 footer .spacer { flex: 1; }
+
+/* Landing images: gadgets alone on a transparent background, at their real on-screen size (2x files). */
+img.gadget { display: block; max-width: 100%; height: auto; margin: 0 auto; border: 0; border-radius: 0; box-shadow: none; }
+img.gadget.hero-shot { margin-top: 8px; }
+.split img.gadget { border: 0; box-shadow: none; border-radius: 0; }
