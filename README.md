@@ -6,7 +6,7 @@ GitHub Pages로 서비스하는 정적 사이트다(빌드 단계 없음).
 - 주소: https://zoneline.coldlapse.dev
 - 개인정보 처리방침: https://zoneline.coldlapse.dev/privacy.html (Microsoft Store에 제출하는 URL)
 - 테마 가이드: https://zoneline.coldlapse.dev/themes.html
-- 지원: 이 저장소의 issues
+- 지원: 이메일 vegarian@dgu.ac.kr
 
 영어와 한국어. 처음 방문하면 브라우저 언어를 따른다(한국어 브라우저는 한국어, 나머지는 영어).
 KO/EN 토글로 바꾸면 그 선택을 기억한다. `?lang=en`, `?lang=ko`로 언어를 강제할 수 있다.
