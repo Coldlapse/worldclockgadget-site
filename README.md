@@ -1,6 +1,6 @@
 # worldclockgadget-site
 
-World Clock Gadget의 랜딩 페이지, 개인정보 처리방침, 테마 가이드. World Clock Gadget은 Microsoft Store에서 파는 Windows용 바탕 화면 세계 시계 앱이다.
+Financial World Clock Gadget의 랜딩 페이지, 개인정보 처리방침, 테마 가이드. Financial World Clock Gadget은 Microsoft Store에서 파는 Windows용 바탕 화면 세계 시계 앱이다.
 GitHub Pages로 서비스하는 정적 사이트다(빌드 단계 없음).
 
 - 주소: https://worldclock.coldlapse.dev
